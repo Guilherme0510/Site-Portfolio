@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link, animateScroll as scroll } from 'react-scroll'; 
 import '../../Componentes/main.css';
 import '../Navbar/navbar.css';
+import { Link } from "react-scroll";
 
 function Navbar() {
     const [isVisible, setIsVisible] = useState(true);
@@ -30,10 +30,6 @@ function Navbar() {
         };
     }, [lastScrollY]);
 
-    const scrollToTop = () => {
-        scroll.scrollToTop();
-    };
-
     return (
         <nav className={`navbar navbar-expand-lg flex-column align-items-center fixed-top ${isVisible ? 'navbar-mostra' : 'navbar-esconde'} ${isScrolled ? 'scrolled' : ''}`}>
             <div className="container-fluid justify-content-center">
@@ -47,7 +43,7 @@ function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link to="inicio" className="nav-link smooth-scroll">Inicio</Link>
+                        <Link to="inicio" className="nav-link">Inicio</Link>
                         <Link to="sobre" className="nav-link">Sobre</Link>
                         <Link to="habilidades" className="nav-link">Habilidades</Link>
                         <Link to="projetos" className="nav-link">Projetos</Link>
